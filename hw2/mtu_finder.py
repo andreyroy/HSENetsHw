@@ -15,7 +15,7 @@ def check_host_reachable(destination):
 
 
 def find_min_mtu(destination):
-    low, high = 28, 1500
+    low, high = 0, 1500
     mtu = low
 
     while low <= high:
@@ -56,5 +56,5 @@ if __name__ == "__main__":
         sys.exit(1)
 
     conf.verb = 0
-    min_mtu = min(find_min_mtu(destination), 1500)
+    min_mtu = find_min_mtu(destination)
     print(f"The minimum MTU to {destination} is {min_mtu}")
